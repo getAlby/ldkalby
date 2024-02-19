@@ -1,0 +1,31 @@
+[Error]
+enum SdkError {
+  "LdkApi",
+  "InvalidArgument",
+  //"Other",
+};
+
+dictionary GetInfoResponse {
+  string pubkey;
+};
+
+dictionary MakeInvoiceRequest {
+  u64 amount_msat;
+};
+
+dictionary MakeInvoiceResponse {
+  string bolt11;
+};
+
+interface BlockingLdkAlbyClient {
+  [Throws=SdkError]
+  GetInfoResponse get_info();
+  
+  [Throws=SdkError]
+  MakeInvoiceResponse make_invoice(MakeInvoiceRequest request);
+};
+
+namespace ldkalby {
+  [Throws=SdkError]
+  BlockingLdkAlbyClient new_blocking_ldk_alby_client(string mnemonic, string work_dir);
+};

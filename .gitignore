@@ -1,0 +1,5 @@
+target
+tests/bindings/golang/ldkalby
+ffi/golang
+
+examples/ldk

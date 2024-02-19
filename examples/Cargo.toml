@@ -1,0 +1,19 @@
+[package]
+name = "examples"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "get-info"
+path = "get-info.rs"
+
+[[bin]]
+name = "make-invoice"
+path = "make-invoice.rs"
+
+[dependencies]
+ldkalby = { path = "../" }
+
+[build-dependencies]
+
+[dev-dependencies]
